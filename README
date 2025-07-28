@@ -1,0 +1,26 @@
+# mi-springboot
+
+Proyecto Java con Spring Boot diseñado como base para crear una API REST segura, documentada y lista para pruebas y despliegue con Docker.
+
+## Características
+
+- ✅ Spring Boot 2.7.13
+- ✅ Java 8
+- ✅ API REST con Spring Web
+- ✅ Seguridad básica con Spring Security
+- ✅ Persistencia con Spring Data JPA y H2 (en memoria)
+- ✅ Mapeo DTO/Entidad con MapStruct
+- ✅ Documentación automática con Swagger (springdoc-openapi)
+- ✅ Tests con JUnit 5 y cobertura con JaCoCo
+- ✅ Generación de imagen Docker con Jib
+
+## Requisitos
+
+- Java 8
+- Maven 3.6+
+- Docker (opcional, para imagen)
+
+## Ejecución local
+
+```bash
+mvn spring-boot:run
