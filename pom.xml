@@ -13,7 +13,7 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.7.13</version>
-    <relativePath/> 
+    <relativePath/>
   </parent>
 
   <properties>
@@ -21,45 +21,43 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- Versión de MapStruct -->
     <mapstruct.version>1.5.3.Final</mapstruct.version>
-    <!-- Versión de Swagger/OpenAPI -->
     <springdoc.version>1.6.9</springdoc.version>
   </properties>
 
   <dependencies>
-    <!-- Spring Boot Starter básico (web, etc) -->
+    <!-- Spring Boot Starter básico -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
     </dependency>
 
-    <!-- Spring Boot Web para APIs REST -->
+    <!-- Web -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-    <!-- Spring Data JPA para acceso a BD -->
+    <!-- JPA -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
 
-    <!-- Driver H2 para BD en memoria (dev/tests) -->
+    <!-- H2 Database -->
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <scope>runtime</scope>
     </dependency>
 
-    <!-- Spring Security para seguridad básica -->
+    <!-- Seguridad -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
 
-    <!-- Lombok para código menos verboso -->
+    <!-- Lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -67,14 +65,12 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- MapStruct para mapeo DTO/entidades -->
+    <!-- MapStruct -->
     <dependency>
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct</artifactId>
       <version>${mapstruct.version}</version>
     </dependency>
-
-    <!-- MapStruct processor para compilación -->
     <dependency>
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct-processor</artifactId>
@@ -82,14 +78,14 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- Swagger / OpenAPI para documentación automática -->
+    <!-- Swagger / OpenAPI -->
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-ui</artifactId>
       <version>${springdoc.version}</version>
     </dependency>
 
-    <!-- Testing con JUnit 5 y Spring Boot -->
+    <!-- Testing -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
@@ -105,7 +101,7 @@
 
   <build>
     <plugins>
-      <!-- Compilador Java -->
+      <!-- Compilador -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -114,13 +110,11 @@
           <source>${java.version}</source>
           <target>${java.version}</target>
           <annotationProcessorPaths>
-            <!-- Necesario para MapStruct -->
             <path>
               <groupId>org.mapstruct</groupId>
               <artifactId>mapstruct-processor</artifactId>
               <version>${mapstruct.version}</version>
             </path>
-            <!-- Lombok si usas annotation processing -->
             <path>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
@@ -130,13 +124,13 @@
         </configuration>
       </plugin>
 
-      <!-- Plugin para empaquetar Spring Boot -->
+      <!-- Spring Boot -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
 
-      <!-- Jacoco para medir cobertura de tests -->
+      <!-- JaCoCo para cobertura -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -157,7 +151,7 @@
         </executions>
       </plugin>
 
-      <!-- Jib para crear imagen Docker fácilmente -->
+      <!-- Jib para crear imágenes Docker -->
       <plugin>
         <groupId>com.google.cloud.tools</groupId>
         <artifactId>jib-maven-plugin</artifactId>
@@ -170,5 +164,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>
